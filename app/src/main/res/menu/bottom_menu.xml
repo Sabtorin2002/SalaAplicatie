@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomHome"
+        android:icon="@drawable/baseline_house_24"
+        android:title="Home"/>
+    <item
+        android:id="@+id/bottomDumbell"
+        android:icon="@drawable/dumbbell_svgrepo_com__1_"
+        android:title="Workout"/>
+    <item
+        android:id="@+id/bottomProfile"
+        android:icon="@drawable/baseline_person_2_24"
+        android:title="Profile"/>
+
+</menu>

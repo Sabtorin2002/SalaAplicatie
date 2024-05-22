@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tvSetNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/etWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
+        android:hint="Weight"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/etRep"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:inputType="number"
+        android:hint="Reps"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/etRpe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:inputType="numberDecimal"
+        android:hint="RPE"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btnConfirmSet"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Done"
+        android:textColor="@drawable/button_text_color" />
+
+    <Button
+        android:id="@+id/btnDeleteSet"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="-"
+        android:textColor="@color/red" />
+
+
+</LinearLayout>

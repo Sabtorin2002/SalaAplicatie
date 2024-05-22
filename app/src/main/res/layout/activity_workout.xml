@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blackgrey"
+    android:id="@+id/WorkoutActivity"
+    tools:context=".workout.WorkoutActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:id="@+id/bottomNavigationView"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bottom_background"
+        app:itemIconSize="32dp"
+        app:itemIconTint="@drawable/item_selector_bottom_navigation"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:menu="@menu/bottom_menu"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:background="@color/granitegray"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="3dp">
+
+
+        <TextView
+            android:id="@+id/tvWorkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="159dp"
+            android:text="Workout"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tvStartYourOwnWorkout"
+        android:layout_width="361dp"
+        android:layout_height="47dp"
+        android:gravity="center_vertical"
+        android:text="Start Your Workout"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163"
+        tools:ignore="MissingConstraints" />
+
+    <FrameLayout
+        android:id="@+id/flStartEmptyWorkout"
+        android:layout_width="361dp"
+        android:layout_height="47dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.257">
+
+        <ImageButton
+            android:id="@+id/imgBtnStartEmptyWorkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icons8_plus_50"
+            android:background="@android:color/transparent"
+            app:tint="@color/brandeisblue"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/tvStartEmptyWorkout"
+            android:layout_width="145dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:text="Start Empty Workout"
+            android:layout_marginStart="54dp"
+            android:textSize="15dp"/>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

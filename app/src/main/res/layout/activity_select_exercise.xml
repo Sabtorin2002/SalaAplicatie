@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".workout.SelectExercise"
+    android:orientation="vertical"
+    android:background="@color/blackgrey">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginTop="10dp">
+
+        <ImageButton
+            android:id="@+id/imgBtnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/blackgrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_arrow_back_ios_24"
+            app:tint="@color/brandeisblue" />
+        <TextView
+            android:id="@+id/tvAddExercise"
+            android:layout_width="200dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:text="Add Exercise"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:tint="@color/brandeisblue"
+            app:layout_constraintStart_toEndOf="@id/imgBtnBack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="40dp"/>
+
+        <Button
+            style="@style/CustomButtonAlbastru"
+            android:id="@+id/btnCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            app:tint="@color/brandeisblue"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <SearchView
+        android:id="@+id/searchExercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/davysgray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAllEquipment"
+            style="@style/CustomButtonAlbastru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Equipment"
+            android:textSize="17sp"
+            app:tint="@color/brandeisblue" />
+
+        <Button
+            android:id="@+id/btnAllMuscles"
+            style="@style/CustomButtonAlbastru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="Muscles"
+            android:textSize="17sp"
+            app:tint="@color/brandeisblue" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvExercitii"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+</LinearLayout>

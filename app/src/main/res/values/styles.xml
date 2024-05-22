@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomButtonAlbastru" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/button_background_albastru</item>
+        <item name="android:textColor">@color/white</item>
+        <!-- Ajustează textSize dacă este necesar -->
+        <item name="android:textSize">19sp</item>
+        <!-- Elimină efectul de umplere material (ripple effect) dacă este necesar -->
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <!-- Ajustează alte atribute cum ar fi padding, dacă este necesar -->
+    </style>
+
+    <style name="CustomButtonTransparent" parent="Widget.Material3.Button">
+        <!-- Suprascrie colorPrimary cu o culoare diferită sau transparent pentru a "dezactiva" -->
+        <item name="backgroundTint">@android:color/transparent</item>
+        <!-- Setează orice alte atribute dorite -->
+    </style>
+
+    <dimen name="vertical_space_height">12dp</dimen>
+</resources>

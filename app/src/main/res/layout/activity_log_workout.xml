@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".workout.LogWorkout"
+    android:background="@color/blackgrey">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <ImageButton
+            android:id="@+id/imgBtnArrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/brandeisblue" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tvLogWorkout"
+            android:layout_width="123dp"
+            android:layout_height="41dp"
+            android:text="LogWorkout"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@id/imgBtnArrowBack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="40dp"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btnFinish"
+            android:layout_width="121dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:text="Finish"
+            android:textSize="19sp"
+            android:background="@drawable/button_background_albastru"
+            />
+
+
+    </LinearLayout>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".workout.LogWorkout">
+
+    <TextView
+        android:id="@+id/tvDurationText"
+        android:layout_width="66dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:text="Duration"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="66dp"
+        android:layout_height="25dp"
+        android:text="00:00"
+        android:textColor="@color/brandeisblue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tvDurationText"
+        app:layout_constraintTop_toBottomOf="@+id/tvDurationText"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvVolumeText"
+        android:layout_width="66dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:text="Volume"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDurationText"
+        app:layout_constraintStart_toEndOf="@+id/tvDurationText"
+        app:layout_constraintTop_toTopOf="@+id/tvDurationText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvSetsText"
+        android:layout_width="66dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="52dp"
+        android:text="Sets"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVolumeText"
+        app:layout_constraintStart_toEndOf="@+id/tvVolumeText"
+        app:layout_constraintTop_toTopOf="@+id/tvVolumeText"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvVolume"
+        android:layout_width="66dp"
+        android:layout_height="25dp"
+        android:textSize="20sp"
+        android:text="0 kg"
+        android:layout_marginTop="1dp"
+        android:textColor="@color/brandeisblue"
+        app:layout_constraintStart_toStartOf="@+id/tvVolumeText"
+        app:layout_constraintTop_toBottomOf="@+id/tvVolumeText"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvSets"
+        android:layout_width="66dp"
+        android:layout_height="25dp"
+        android:text="0"
+        android:textSize="20sp"
+        android:textColor="@color/brandeisblue"
+        app:layout_constraintStart_toStartOf="@+id/tvSetsText"
+        app:layout_constraintTop_toBottomOf="@+id/tvSetsText"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/btnAddExercise"
+        style="@style/CustomButtonAlbastru"
+        android:layout_width="252dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="12dp"
+        android:text="+ Add Exercise"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSets" />
+
+    <Button
+        android:id="@+id/btnDiscardWorkout"
+        style="@style/CustomButtonTransparent"
+        android:layout_width="252dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="- Discard Workout"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAddExercise" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAntrenament"
+        android:layout_width="match_parent"
+        android:layout_height="539dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnDiscardWorkout"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

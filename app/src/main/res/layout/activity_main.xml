@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".firstSteps.RegisterActivity">
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="394dp"
+        android:layout_height="75dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:text="Register"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="50sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.134" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="412dp"
+        android:layout_height="58dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text="Register"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.655" />
+
+    <EditText
+        android:id="@+id/etRePassword"
+        android:layout_width="202dp"
+        android:layout_height="48dp"
+        android:drawableRight="@drawable/baseline_lock_person_24"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Retype password"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="202dp"
+        android:layout_height="48dp"
+        android:drawableRight="@drawable/baseline_lock_person_24"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Password"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="202dp"
+        android:layout_height="48dp"
+        android:drawableRight="@drawable/baseline_person_2_24"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Email"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.27" />
+
+    <Button
+        android:id="@+id/btnSignIn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="407dp"
+        android:layout_height="58dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text="You already have an account? Sign in"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758" />
+
+    <EditText
+        android:id="@+id/etUserUsername"
+        android:layout_width="202dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:drawableRight="@drawable/baseline_person_2_24"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "141612019030",
+    "project_id": "licentaloginregister-31353",
+    "storage_bucket": "licentaloginregister-31353.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141612019030:android:d9dead60378267ccb07af7",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0lRW2gWUiNiIqjWSRVzClziqaEpz4FhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141612019030:android:1f3d31c73cb48489b07af7",
+        "android_client_info": {
+          "package_name": "com.example.salaaplicatie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0lRW2gWUiNiIqjWSRVzClziqaEpz4FhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

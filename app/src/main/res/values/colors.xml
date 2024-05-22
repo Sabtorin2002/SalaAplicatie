@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blackshadows">#BBB5AE</color>
+    <color name="brandeisblue">#0361F3</color>
+    <color name="davysgray">#545454</color>
+    <color name="middlegray">#8A8681</color>
+    <color name="granitegray">#666666</color>
+    <color name="red">#FF0000</color>
+    <color name="blackgrey">#433D3D</color>
+    
+    <color name="my_icont_tint_color"></color>
+
+</resources>

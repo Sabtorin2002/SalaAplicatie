@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logo">
+
+    <Button
+        android:id="@+id/btnWelcome"
+        android:layout_width="243dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="553dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="98dp"
+        android:background="@android:color/transparent"
+        android:text="Let's start"
+        android:textSize="20sp" />
+</RelativeLayout>
