@@ -31,6 +31,12 @@ public class LoginActivity extends AppCompatActivity {
         btnLogIn = findViewById(R.id.btnLogin);
         mAuth = FirebaseAuth.getInstance();
 
+        Button btnForgotPassword = findViewById(R.id.btnForgotPassword);
+        btnForgotPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, ResetPassword.class);
+            startActivity(intent);
+        });
+
         btnLogIn.setOnClickListener(v -> {
             String user = username.getText().toString().trim();
             String pass = password.getText().toString().trim();

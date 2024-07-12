@@ -42,14 +42,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="40dp"/>
 
-        <Button
-            style="@style/CustomButtonAlbastru"
-            android:id="@+id/btnCreate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create"
-            app:tint="@color/brandeisblue"
-            android:textSize="17sp" />
 
     </LinearLayout>
 
@@ -57,36 +49,9 @@
         android:id="@+id/searchExercise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/davysgray"/>
+        android:background="@color/davysgray"
+        />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnAllEquipment"
-            style="@style/CustomButtonAlbastru"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Equipment"
-            android:textSize="17sp"
-            app:tint="@color/brandeisblue" />
-
-        <Button
-            android:id="@+id/btnAllMuscles"
-            style="@style/CustomButtonAlbastru"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:text="Muscles"
-            android:textSize="17sp"
-            app:tint="@color/brandeisblue" />
-
-    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,7 +62,8 @@
                 android:id="@+id/rvExercitii"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingTop="10dp"/>
         </LinearLayout>
 
 </LinearLayout>

@@ -6,6 +6,7 @@ public class ExercitiiAntrenament {
     private String exerciseName;
     private String equipment;
     List<ExercitiiSet> sets;
+    private long timestamp;
 
     public ExercitiiAntrenament(String exerciseName, String equipment, List<ExercitiiSet> sets) {
         this.exerciseName = exerciseName;
@@ -23,5 +24,9 @@ public class ExercitiiAntrenament {
 
     public List<ExercitiiSet> getSets() {
         return sets;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
     }
 }

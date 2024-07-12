@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SalaAplicatie</string>
+    <string-array name="chart_options">
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+
 </resources>

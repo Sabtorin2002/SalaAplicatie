@@ -5,7 +5,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,14 +14,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.salaaplicatie.R;
 import com.example.salaaplicatie.profile.ProfileActivity;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -35,7 +32,6 @@ public class LogWorkout extends AppCompatActivity {
 
     private TextView tvTimer;
     private Button addExercise;
-    private Button discardWorkout;
     private Button btnFinishSave;
 
     private Handler timerHandler=new Handler();
@@ -142,12 +138,10 @@ public class LogWorkout extends AppCompatActivity {
         String userId = mAuth.getCurrentUser().getUid();
         String timeText = tvTimer.getText().toString();
         int totalMinutes = convertTimeToMinutes(timeText);
-
         Map<String, Object> workout = new HashMap<>();
         workout.put("userId", userId);
         workout.put("timestamp", new Timestamp(new Date()));
         List<Map<String, Object>> exercises = new ArrayList<>();
-
         for (ExercitiiAntrenament exercise : customAdapterExercitiiSet.getExercitiiAntrenament()) {
             Map<String, Object> exerciseDetails = new HashMap<>();
             exerciseDetails.put("exerciseName", exercise.getExerciseName());
@@ -163,14 +157,11 @@ public class LogWorkout extends AppCompatActivity {
 
                 sets.add(setDetails);
             }
-
             exerciseDetails.put("sets", sets);
             exercises.add(exerciseDetails);
         }
-
         workout.put("exercises",exercises);
         workout.put("duration",totalMinutes);
-
         db.collection("workouts").add(workout)
                 .addOnSuccessListener(documentReference -> {
                     Toast.makeText(LogWorkout.this, "Workout saved successfully with ID: " + documentReference.getId(), Toast.LENGTH_SHORT).show();
@@ -217,6 +208,78 @@ public class LogWorkout extends AppCompatActivity {
 
         tvSets.setText(String.valueOf(totalSets));
         tvVolume.setText(totalVolume + " kg");
+    }
+
+
+    private void fetchPreviousWorkouts(FirebaseCallback callback) {
+        String userId = mAuth.getCurrentUser().getUid();
+        db.collection("workouts")
+                .whereEqualTo("userId", userId)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<DocumentSnapshot> documents = task.getResult().getDocuments();
+                        callback.onCallback(documents);
+                    } else {
+                        Toast.makeText(LogWorkout.this, "Failed to fetch previous workouts", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private interface FirebaseCallback {
+        void onCallback(List<DocumentSnapshot> documents);
+    }
+
+
+    private void compareAndIdentifyRecords(List<DocumentSnapshot> previousWorkouts, Map<String, Object> currentWorkout) {
+        List<Map<String, Object>> currentExercises = (List<Map<String, Object>>) currentWorkout.get("exercises");
+        Map<String, Float> maxWeightRecords = new HashMap<>();
+        Map<String, Float> maxVolumeRecords = new HashMap<>();
+
+        // Procesăm antrenamentele anterioare pentru a găsi recordurile maxime
+        for (DocumentSnapshot document : previousWorkouts) {
+            List<Map<String, Object>> previousExercises = (List<Map<String, Object>>) document.get("exercises");
+            for (Map<String, Object> exercise : previousExercises) {
+                String exerciseName = (String) exercise.get("exerciseName");
+                List<Map<String, Object>> sets = (List<Map<String, Object>>) exercise.get("sets");
+                for (Map<String, Object> set : sets) {
+                    float weight = ((Number) set.get("weight")).floatValue();
+                    int reps = ((Number) set.get("reps")).intValue();
+                    float volume = weight * reps;
+
+                    maxWeightRecords.putIfAbsent(exerciseName, weight);
+                    if (weight > maxWeightRecords.get(exerciseName)) {
+                        maxWeightRecords.put(exerciseName, weight);
+                    }
+
+                    maxVolumeRecords.putIfAbsent(exerciseName, volume);
+                    if (volume > maxVolumeRecords.get(exerciseName)) {
+                        maxVolumeRecords.put(exerciseName, volume);
+                    }
+                }
+            }
+        }
+
+        // Comparam exercițiile curente cu recordurile găsite
+        for (Map<String, Object> exercise : currentExercises) {
+            String exerciseName = (String) exercise.get("exerciseName");
+            List<Map<String, Object>> sets = (List<Map<String, Object>>) exercise.get("sets");
+            for (Map<String, Object> set : sets) {
+                float weight = ((Number) set.get("weight")).floatValue();
+                int reps = ((Number) set.get("reps")).intValue();
+                float volume = weight * reps;
+
+                if (!maxWeightRecords.containsKey(exerciseName) || weight > maxWeightRecords.get(exerciseName)) {
+                    set.put("newWeightRecord", true);
+                    maxWeightRecords.put(exerciseName, weight);
+                }
+
+                if (!maxVolumeRecords.containsKey(exerciseName) || volume > maxVolumeRecords.get(exerciseName)) {
+                    set.put("newVolumeRecord", true);
+                    maxVolumeRecords.put(exerciseName, volume);
+                }
+            }
+        }
     }
 
 }

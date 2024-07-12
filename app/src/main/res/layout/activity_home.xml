@@ -8,10 +8,15 @@
     android:id="@+id/HomeActivity"
     tools:context=".home.HomeActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
     <TextView
         android:id="@+id/tvHome"
-        android:layout_width="78dp"
-        android:layout_height="38dp"
+        android:layout_width="387dp"
+        android:layout_height="685dp"
         android:layout_centerInParent="true"
         android:text="Home"
         android:textColor="@color/brandeisblue"
@@ -20,7 +25,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.033"
+        tools:ignore="MissingConstraints"
+        android:gravity="start"
+        android:textAlignment="viewStart"
+        android:lineSpacingExtra="4dp"
+        android:hyphenationFrequency="full"/>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

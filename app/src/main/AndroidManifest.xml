@@ -4,8 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +17,7 @@
         android:theme="@style/Theme.SalaAplicatie"
         tools:targetApi="31">
         <activity
-            android:name=".workout.CustomAdapterExercitiiAntrenament"
+            android:name=".firstSteps.ResetPassword"
             android:exported="false" />
         <activity
             android:name=".workout.CustomAdapterExercitiiPrestabilite"

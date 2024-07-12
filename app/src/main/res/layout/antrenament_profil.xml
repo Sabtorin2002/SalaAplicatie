@@ -1,0 +1,107 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="7dp"-->
+<!--    android:background="@drawable/item_workout_profil"-->
+<!--    android:layout_marginTop="5dp"-->
+<!--    android:layout_marginBottom="5dp">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvWorkoutDate"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Date"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_marginBottom="3dp"-->
+<!--        android:textStyle="bold"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvWorkoutDuration"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Duration"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_marginBottom="3dp"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvWorkoutVolume"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Volume"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_marginBottom="3dp"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvWorkoutProfilExercices"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Exercises"-->
+<!--        android:textColor="@color/white"/>-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imgMedal"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/medal_6_svgrepo_com"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_gravity="center_horizontal"/>-->
+<!--</LinearLayout>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="7dp"
+    android:background="@drawable/item_workout_profil"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp">
+
+    <TextView
+        android:id="@+id/tvWorkoutDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/white"
+        android:layout_marginBottom="3dp"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+    <ImageView
+        android:id="@+id/imgMedal"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/medal_6_svgrepo_com"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/tvWorkoutDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration"
+        android:textColor="@color/white"
+        android:layout_marginBottom="3dp"
+        android:layout_below="@id/tvWorkoutDate"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/tvWorkoutVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volume"
+        android:textColor="@color/white"
+        android:layout_marginBottom="3dp"
+        android:layout_below="@id/tvWorkoutDuration"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/tvWorkoutProfilExercices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exercises"
+        android:textColor="@color/white"
+        android:layout_below="@id/tvWorkoutVolume"
+        android:layout_alignParentStart="true"/>
+</RelativeLayout>

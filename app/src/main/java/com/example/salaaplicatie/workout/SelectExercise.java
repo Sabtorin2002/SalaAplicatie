@@ -107,20 +107,48 @@ public class SelectExercise extends AppCompatActivity {
         });
     }
 
-    private void filter(String text) {
-        List<ExercitiiPrestabilite> filteredList = new ArrayList<>();
-        if (text.isEmpty()) {
-            filteredList.addAll(listaExercitiiOriginal); // Adaugă înapoi toate exercițiile
-        } else {
-            for (ExercitiiPrestabilite exercitiu : listaExercitiiOriginal) { // Folosește lista originală pentru filtrare
-                if (exercitiu.getNume().toLowerCase().contains(text.toLowerCase()) ||
-                        exercitiu.getEquipment().toLowerCase().contains(text.toLowerCase()) ||
-                        exercitiu.getMuscles().toLowerCase().contains(text.toLowerCase())) {
-                    filteredList.add(exercitiu);
-                }
+//    private void filter(String text) {
+//        List<ExercitiiPrestabilite> filteredList = new ArrayList<>();
+//        if (text.isEmpty()) {
+//            filteredList.addAll(listaExercitiiOriginal);
+//        } else {
+//            for (ExercitiiPrestabilite exercitiu : listaExercitiiOriginal) {
+//                if (exercitiu.getNume().toLowerCase().contains(text.toLowerCase()) ||
+//                        exercitiu.getEquipment().toLowerCase().contains(text.toLowerCase()) ||
+//                        exercitiu.getMuscles().toLowerCase().contains(text.toLowerCase())) {
+//                    filteredList.add(exercitiu);
+//                }
+//            }
+//        }
+//        adapter.updateList(filteredList);
+//    }
+private void filter(String text) {
+    List<ExercitiiPrestabilite> filteredList = new ArrayList<>();
+    if (text.isEmpty()) {
+        filteredList.addAll(listaExercitiiOriginal);
+    } else {
+        for (ExercitiiPrestabilite exercitiu : listaExercitiiOriginal) {
+            boolean matches = false;
+
+            if (exercitiu.getNume() != null && exercitiu.getNume().toLowerCase().contains(text.toLowerCase())) {
+                matches = true;
+            }
+
+            if (exercitiu.getEquipment() != null && exercitiu.getEquipment().toLowerCase().contains(text.toLowerCase())) {
+                matches = true;
+            }
+
+            if (exercitiu.getMuscles() != null && exercitiu.getMuscles().toLowerCase().contains(text.toLowerCase())) {
+                matches = true;
+            }
+
+            if (matches) {
+                filteredList.add(exercitiu);
             }
         }
-        adapter.updateList(filteredList);
     }
+    adapter.updateList(filteredList);
+}
+
 
 }

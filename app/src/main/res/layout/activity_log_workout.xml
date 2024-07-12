@@ -120,12 +120,12 @@
 
     <TextView
         android:id="@+id/tvVolume"
-        android:layout_width="66dp"
+        android:layout_width="90dp"
         android:layout_height="25dp"
-        android:textSize="20sp"
-        android:text="0 kg"
         android:layout_marginTop="1dp"
+        android:text="0 kg"
         android:textColor="@color/brandeisblue"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tvVolumeText"
         app:layout_constraintTop_toBottomOf="@+id/tvVolumeText"
         tools:ignore="MissingConstraints" />
