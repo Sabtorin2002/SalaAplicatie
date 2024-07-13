@@ -96,21 +96,24 @@ public class WorkoutProfilAdapter extends RecyclerView.Adapter<WorkoutProfilAdap
                                     .append("  RPE: ").append(rpe).append("\n");
 
 
-
-                            boolean isNewWeightRecord = workout.isNewWeightRecord(exerciseName, weight);
-                            boolean isNewVolumeRecord = workout.isNewVolumeRecord(exerciseName, volume);
-
+                            boolean isNewExercise = recordTracker.isNewExercise(exerciseName);
+                            boolean isNewWeightRecord = isNewExercise || recordTracker.isNewWeightRecord(exerciseName, weight);
+                            boolean isNewVolumeRecord = isNewExercise || recordTracker.isNewVolumeRecord(exerciseName, volume);
 
                             Log.d("ViewHolder", "Weight record for " + exerciseName + ": " + isNewWeightRecord);
                             Log.d("ViewHolder", "Volume record for " + exerciseName + ": " + isNewVolumeRecord);
 
                             if (isNewWeightRecord || isNewVolumeRecord) {
                                 hasNewRecord = true;
-                                if (isNewWeightRecord) {
-                                    exercisesBuilder.append("  * New Weight Record!\n");
-                                }
-                                if (isNewVolumeRecord) {
-                                    exercisesBuilder.append("  * New Volume Record!\n");
+                                if (isNewExercise) {
+                                    exercisesBuilder.append("  * First Time Record!\n");
+                                } else {
+                                    if (isNewWeightRecord) {
+                                        exercisesBuilder.append("  * New Weight Record!\n");
+                                    }
+                                    if (isNewVolumeRecord) {
+                                        exercisesBuilder.append("  * New Volume Record!\n");
+                                    }
                                 }
                             }
 

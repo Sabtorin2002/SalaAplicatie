@@ -107,21 +107,6 @@ public class SelectExercise extends AppCompatActivity {
         });
     }
 
-//    private void filter(String text) {
-//        List<ExercitiiPrestabilite> filteredList = new ArrayList<>();
-//        if (text.isEmpty()) {
-//            filteredList.addAll(listaExercitiiOriginal);
-//        } else {
-//            for (ExercitiiPrestabilite exercitiu : listaExercitiiOriginal) {
-//                if (exercitiu.getNume().toLowerCase().contains(text.toLowerCase()) ||
-//                        exercitiu.getEquipment().toLowerCase().contains(text.toLowerCase()) ||
-//                        exercitiu.getMuscles().toLowerCase().contains(text.toLowerCase())) {
-//                    filteredList.add(exercitiu);
-//                }
-//            }
-//        }
-//        adapter.updateList(filteredList);
-//    }
 private void filter(String text) {
     List<ExercitiiPrestabilite> filteredList = new ArrayList<>();
     if (text.isEmpty()) {

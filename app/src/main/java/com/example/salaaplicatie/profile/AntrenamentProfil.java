@@ -85,45 +85,6 @@ public class AntrenamentProfil {
     }
 
 
-//    public void updateGlobalRecords(RecordTracker recordTracker) {
-//        if (exercises != null) {
-//            for (Map<String, Object> exercise : exercises) {
-//                String exerciseName = (String) exercise.get("exerciseName");
-//                List<Map<String, Object>> sets = (List<Map<String, Object>>) exercise.get("sets");
-//                if (sets != null) {
-//                    for (Map<String, Object> set : sets) {
-//                        float weight = ((Number) set.get("weight")).floatValue();
-//                        int reps = ((Number) set.get("reps")).intValue();
-//                        float volume = weight * reps;
-//
-//                        boolean newWeightRecord = recordTracker.isNewWeightRecord(exerciseName, weight);
-//                        boolean newVolumeRecord = recordTracker.isNewVolumeRecord(exerciseName, volume);
-//
-//                        Log.d("AntrenamentProfil", "Before update: Exercise: " + exerciseName + " Weight: " + weight + " New Weight Record: " + newWeightRecord);
-//                        Log.d("AntrenamentProfil", "Before update: Exercise: " + exerciseName + " Volume: " + volume + " New Volume Record: " + newVolumeRecord);
-//
-//                        recordTracker.updateRecords(exerciseName, weight, volume);
-//
-//                        boolean updatedWeightRecord = recordTracker.isNewWeightRecord(exerciseName, weight);
-//                        boolean updatedVolumeRecord = recordTracker.isNewVolumeRecord(exerciseName, volume);
-//
-//                        Log.d("AntrenamentProfil", "After update: Exercise: " + exerciseName + " Weight: " + weight + " New Weight Record: " + updatedWeightRecord);
-//                        Log.d("AntrenamentProfil", "After update: Exercise: " + exerciseName + " Volume: " + volume + " New Volume Record: " + updatedVolumeRecord);
-//
-//                        if (newWeightRecord) {
-//                            maxWeightRecords.put(exerciseName, weight);
-//                        }
-//                        if (newVolumeRecord) {
-//                            maxVolumeRecords.put(exerciseName, volume);
-//                        }
-//
-//                        Log.d(TAG, "Updated global records for: " + exerciseName + " Weight: " + weight + " Volume: " + volume);
-//                    }
-//                }
-//            }
-//        }
-//    }
-
     public void updateGlobalRecords(RecordTracker recordTracker) {
         if (exercises != null) {
             for (Map<String, Object> exercise : exercises) {
@@ -138,10 +99,9 @@ public class AntrenamentProfil {
                         boolean newWeightRecord = recordTracker.isNewWeightRecord(exerciseName, weight);
                         boolean newVolumeRecord = recordTracker.isNewVolumeRecord(exerciseName, volume);
 
-                        Log.d("AntrenamentProfil", "Before update: Exercise: " + exerciseName + " Weight: " + weight + " New Weight Record: " + newWeightRecord);
-                        Log.d("AntrenamentProfil", "Before update: Exercise: " + exerciseName + " Volume: " + volume + " New Volume Record: " + newVolumeRecord);
+                        Log.d(TAG, "Checking records for: " + exerciseName + " Weight: " + weight + " Volume: " + volume);
+                        Log.d(TAG, "New Weight Record: " + newWeightRecord + " New Volume Record: " + newVolumeRecord);
 
-                        recordTracker.updateRecords(exerciseName, weight, volume);
 
                         if (newWeightRecord) {
                             maxWeightRecords.put(exerciseName, weight);
@@ -149,6 +109,8 @@ public class AntrenamentProfil {
                         if (newVolumeRecord) {
                             maxVolumeRecords.put(exerciseName, volume);
                         }
+
+                        recordTracker.updateRecords(exerciseName,weight,volume);
 
                         Log.d(TAG, "Updated global records for: " + exerciseName + " Weight: " + weight + " Volume: " + volume);
                     }
