@@ -27,10 +27,3 @@ Inter-page communication within the application is efficiently managed using **I
 - **Navigation**: Intents for activity communication  
 - **User Interface**: XML-based layouts designed in Android Studio  
 
-## Installation
-
-Follow these steps to set up the project locally:
-
-1. **Clone the repository**:  
-   ```bash
-   git clone https://github.com/Sabtorin2002/SalaAplicatie.git
